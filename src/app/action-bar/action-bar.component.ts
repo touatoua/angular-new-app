@@ -9,6 +9,8 @@ export class ActionBarComponent implements OnInit {
   @Input() step: number = 1
   @Output() numberChange = new EventEmitter()
   num = 0
+  @Input() counter = 20
+  @Input() inputDisplay = true
 
   constructor() { }
 
@@ -16,17 +18,17 @@ export class ActionBarComponent implements OnInit {
   }
 
   decrease() {
-    if (this.num - this.step >= 0) {
-      this.num -= this.step
-      this.numberChange.emit(this.num)
+    if (this.counter - this.step >= 0) {
+      this.counter -= this.step
+      this.numberChange.emit(this.counter)
 
     }
   }
 
   increase() {
-    if (this.num + this.step <= 100) {
-      this.num += this.step
-      this.numberChange.emit(this.num)
+    if (this.counter + this.step <= 100) {
+      this.counter += this.step
+      this.numberChange.emit(this.counter)
 
     }
   }

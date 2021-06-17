@@ -18,5 +18,44 @@ name {{ninJaName}}
 <app-action-bar (numberChange)="testNumberChange($event)" [step]="10"></app-action-bar>
 <button type="button" (click)="testClick()">testEvenBinding</button> -->
 
-<app-max-min-meter minLabel="myMinLabel" maxLabel="myMaxLabel" (maxChange)="doMinChange($event)"
-  (minChange)="doMaxChange($event)"></app-max-min-meter>
+<!-- <app-max-min-meter minLabel="myMinLabel" maxLabel="myMaxLabel" (maxChange)="doMinChange($event)"
+  (minChange)="doMaxChange($event)"></app-max-min-meter> -->
+<!-- 
+<div style="padding: 2px;">
+  <app-action-bar (numberChange)="doMinChange($event)"  (numberChange)="appCounter = $event"></app-action-bar>
+</div>
+
+<app-sqaure-flex [divWidth]="appCounter" [divHeight]="sqaureHeight">
+
+</app-sqaure-flex>
+<div>
+  width
+  <button type="button" (click)="sqaureWidth=50">50px</button>
+  <button type="button" (click)="sqaureWidth=100">100px</button>
+  <button type="button" (click)="sqaureWidth=200">200px</button>
+
+</div> -->
+
+<!-- <div *ngIf="activate else elseTemplate">
+  <app-action-bar></app-action-bar>
+</div>
+<ng-template #elseTemplate>
+  <div>
+    active now
+  </div>
+</ng-template>
+
+<button type="button" (click)="activate=true">activate</button> -->
+
+<app-action-bar [inputDisplay]="false"></app-action-bar>
+<ul>
+  <li *ngFor="let customer of customerList; let i = index">{{customer}}
+    <button (click)="removeCustomer(i)">remove</button>
+  </li>
+</ul>
+
+<button type="button" (click)="pushCustomer()">push</button>
+
+<button type="button" (click)="unshiftCustomer()">unshift</button>
+
+<app-test-request-get></app-test-request-get>

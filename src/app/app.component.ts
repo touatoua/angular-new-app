@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  sqaureWidth = 100
+  sqaureHeight = 250
+  appCounter = 20
+  activate = false
+
+  customerList: string[] = ["tao", "meen", 'biel', "fer"]
 
   testClick() {
     console.log('test even')
@@ -17,10 +23,26 @@ export class AppComponent {
 
   doMinChange(value: number) {
     console.log('value min', value)
+    this.appCounter = value
+
 
   }
 
   doMaxChange(value: number) {
     console.log('value max', value)
+    this.appCounter = value
+
+  }
+
+  pushCustomer() {
+    this.customerList.push(`customer ${this.customerList.length + 1}`)
+  }
+
+  unshiftCustomer() {
+    this.customerList.unshift(`customer ${this.customerList.length + 1}`)
+  }
+
+  removeCustomer(index: number) {
+    this.customerList.splice(index, 1)
   }
 }
